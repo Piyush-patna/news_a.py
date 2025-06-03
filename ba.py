@@ -9,6 +9,7 @@ from tensorflow.keras.layers import Embedding, LSTM, Dense
 
 
 df = pd.read_csv('Fake_Real_data.csv')
+df.drop_duplicates(inplace= True)
 df['Label'] = df['label'].map({'Fake': 0, 'Real': 1})
 
 tokenizer = Tokenizer(num_words=5000)
